@@ -19,7 +19,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 
 function Users(data){
-    console.log(data)
+    const personne = data
+     for(let j = 0; j<personne.length; j++){
+        console.log("personnne Obket : ", personne[j].username + " " +  personne[j].name + " " +  personne[j].address.city + + " " +  personne[j].address.geo.lat)
+    }
 }
 
 
