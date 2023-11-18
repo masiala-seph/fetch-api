@@ -21,7 +21,27 @@ fetch("https://jsonplaceholder.typicode.com/users")
 function Users(data){
     const personne = data
      for(let j = 0; j<personne.length; j++){
-        console.log("personnne Obket : ", personne[j].username + " " +  personne[j].name + " " +  personne[j].address.city + + " " +  personne[j].address.geo.lat)
+        const container = document.getElementById("container");
+        const user = document.createElement('div')
+        const name = document.createElement('div')
+        const city = document.createElement('div')
+        const email = document.createElement('div')
+
+        name.classList = "name"
+        city.classList = "city"
+        email.classList = "email"
+        user.classList = "user"
+
+        name.innerHTML = personne[j].name
+        city.innerHTML = personne[j].address.city
+        email.innerHTML = personne[j].email
+
+        user.appendChild(city);
+        user.appendChild(name);
+        user.appendChild(email);
+
+        container.appendChild(user);
+        // console.log("personnne Obket : ", personne[j].username + " " +  personne[j].name + " " +  personne[j].address.city + + " " +  personne[j].address.geo.lat)
     }
 }
 
